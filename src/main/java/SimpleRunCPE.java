@@ -41,7 +41,6 @@ public class SimpleRunCPE extends Thread {
    * The CPE instance.
    */
   private CollectionProcessingEngine mCPE;
-
   /**
    * Start time of CPE initialization
    */
@@ -69,8 +68,7 @@ public class SimpleRunCPE extends Thread {
 
     // parse CPE descriptor
     System.out.println("Parsing CPE Descriptor");
-    CpeDescription cpeDesc = UIMAFramework.getXMLParser().parseCpeDescription(
-            new XMLInputSource(args[0]));
+    CpeDescription cpeDesc = UIMAFramework.getXMLParser().parseCpeDescription(new XMLInputSource(args[0]));
     // instantiate CPE
     System.out.println("Instantiating CPE");
     mCPE = UIMAFramework.produceCollectionProcessingEngine(cpeDesc);
