@@ -78,51 +78,5 @@ public class GeneAnnotator extends JCasAnnotator_ImplBase{
 			}
 			offset_cumu += lines[i].length()+1;
 		}
-		
-		
-		
-
-
 	}
-/*	public void process(JCas aJCas) {
-		String docText = aJCas.getDocumentText();
-		//BufferedReader reader = new BufferedReader(new StringReader(docText));
-		PosTagNamedEntityRecognizer GeneTagRec;
-		String[] lines = docText.split(System.getProperty("line.separator"));
-		int offset_cumu = 0;
-		try {
-			GeneTagRec = new PosTagNamedEntityRecognizer();
-			Integer key = 1;
-			Map<Integer, Integer> begin2end;
-			for(int i = 0 ; i < 3; i++){
-				//System.out.println(lines[i]);
-				Matcher matcher = mSentenceID.matcher(lines[i]);
-				String senID = null;
-				if(matcher.find()){
-					senID = lines[i].substring(matcher.start(),matcher.end());
-				}
-				begin2end = GeneTagRec.getGeneSpans(lines[i]);
-				Iterator iter = begin2end.keySet().iterator();
-				while(iter.hasNext()){
-					key = (Integer)iter.next();
-					System.out.print(key.toString() + " " + begin2end.get(key).toString());
-					System.out.println(lines[i].substring(key,begin2end.get(key)));
-					Gene geneA = new Gene(aJCas);
-					geneA.setSenID(senID);
-					geneA.setBegin(key.intValue() + offset_cumu);
-					geneA.setEnd(begin2end.get(key).intValue() + offset_cumu);
-					geneA.setGenStart(CalculateNonSpace(key.intValue(),lines[i]));
-					geneA.setGenEnd(CalculateNonSpace(begin2end.get(key).intValue(),lines[i]));
-					geneA.addToIndexes();
-				}
-				offset_cumu += lines[i].length()+1;
-//				System.out.println(lines[i]);				
-			}
-		} catch (ResourceInitializationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
-		
-	}
-	*/
 }

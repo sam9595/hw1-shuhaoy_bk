@@ -119,11 +119,11 @@ public class GeneAnnotationPrinter extends CasConsumer_ImplBase implements CasOb
     }
 
     // iterate and print annotations
-    Iterator annotationIter = jcas.getAnnotationIndex(Gene.type).iterator();
+    Iterator annotationIter = jcas.getAnnotationIndex(Gene.type).iterator();	//Take every annotation
     while (annotationIter.hasNext()) {
       Gene GeneA = (Gene) annotationIter.next();
       System.out.println(GeneA.getSenID()+"|"+GeneA.getGenStart()+" "+GeneA.getGenEnd()+"|"+GeneA.getCoveredText());
-      try {
+      try {//Print in specified format
     	  fileWriter.write(GeneA.getSenID()+"|"+GeneA.getGenStart()+" "+GeneA.getGenEnd()+"|"+GeneA.getCoveredText()+"\n");
       } catch (IOException e) {
 		// TODO Auto-generated catch block

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="FinalGeneAnnotator">
+      <import name="descriptor.FinalGeneAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="GeneNameAnnotator">
+      <import name="descriptor.GeneNameAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NonGenePatternAnnotator">
+      <import name="descriptor.NonGenePatternAnnotator"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>FinalGeneDetector</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>GeneNameAnnotator</node>
+        <node>NonGenePatternAnnotator</node>
+        <node>FinalGeneAnnotator</node>
+      </fixedFlow>
+    </flowConstraints>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs>
+          <type allAnnotatorFeatures="true">NonGenePattern</type>
+          <type allAnnotatorFeatures="true">Gene</type>
+          <type allAnnotatorFeatures="true">FinalGene</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

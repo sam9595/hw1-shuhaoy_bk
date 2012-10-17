@@ -10,7 +10,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Tue Oct 16 12:00:46 EDT 2012
+ * Updated by JCasGen Wed Oct 17 19:03:21 EDT 2012
  * XML source: /home/shuhaoyu/workspace/hw1-shuhaoy/src/main/resources/descriptor/GenecasConsumer.xml
  * @generated */
 public class Gene extends Annotation {

@@ -18,13 +18,13 @@
       <nameValuePair>
         <name>outputfile</name>
         <value>
-          <string>src/main/resources/data/processed/GeneTagOutput.txt</string>
+          <string>hw1-shuhaoy.txt</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="GeneNameDescriptor.xml"/>
+        <import location="FinalGeneDescriptor.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
